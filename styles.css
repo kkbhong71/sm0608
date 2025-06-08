@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #6C63FF;
+    --secondary-color: #4CAF50;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --text-color: #2d3436;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.date-picker {
+    margin: 1rem 0;
+}
+
+.date-input {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.date-input:focus {
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+.meal-card {
+    background: var(--card-background);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+}
+
+.meal-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--background-color);
+}
+
+.meal-header h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.meal-content {
+    padding: 1rem 0;
+}
+
+.meal-info h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.meal-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .meal-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5550d8;
+}
+
+/* Date input customization */
+input[type="date"] {
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 5px;
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+/* SweetAlert2 customization */
+.swal2-popup {
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+.swal2-title {
+    color: #2d3748 !important;
+}
+
+.swal2-html-container {
+    color: #4a5568 !important;
+}
+
+/* Meal menu styling */
+#mealMenu div {
+    transition: all 0.2s ease;
+}
+
+#mealMenu div:hover {
+    background-color: #f8fafc;
+    transform: translateX(5px);
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+} 
